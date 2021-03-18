@@ -1,0 +1,98 @@
+@import '../../sass/config';
+
+
+.mobile-nav{
+    position: fixed;
+    width: 100%;
+    padding: 0 1rem;
+    top:0;
+    left:0;
+    height: 3rem;
+    border-bottom: 1px solid $primary-color;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 5;
+    #{&}__logo{
+        text-decoration: none;
+        font-size:1.5rem;
+        font-weight: bold;
+        letter-spacing: 0.25rem;
+        font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #{&}__btn{
+        z-index: 5;
+        cursor: pointer;
+        width: 2rem;
+        height:80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__burger{
+             z-index: 7;
+            @include transition-ease;
+            position:relative;
+            width: 1.5rem;
+            height: 0.1rem;
+            background: rgba($primary-color, 0.7);
+            &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+            height: 0.1rem;
+            width: 1.5rem;
+            background: rgba($primary-color, 0.7);
+            }
+            &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            height: 0.1rem;
+            width: 1.5rem;
+            background: rgba($primary-color, 0.7);
+            }
+            &.open {
+                transform: rotate(180deg);
+                background: transparent;
+                &::before {
+                    transform: translate(0, 0.5rem) rotate(45deg);
+                }
+                &::after {
+                    transform: translate(0, -0.5rem) rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.nav{
+    @include transition-ease;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    background: rgba(255,255,255,0.5);
+    transform: translateY(-150vh);
+    #{&}__item{
+        font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: 0.5rem;
+        color:$primary-color;
+        margin: 1.5rem 0;
+        font-weight: bold;
+        font-size: 2.5rem;
+        position: relative;
+        text-decoration: none;
+        &.logo{
+            display:none;
+        }
+    }
+    &.open {
+        transform: translateY(0);
+    }
+}

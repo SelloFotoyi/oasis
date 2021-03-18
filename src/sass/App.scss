@@ -1,0 +1,11 @@
+@import './config', '../components/Home/home', '../components/Navbar/nav';
+
+.App {
+  text-align: center;
+  h1{
+    color: green;
+    letter-spacing: 5px;
+    font-family: "type font";
+  }
+}
+
