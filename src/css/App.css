@@ -22,8 +22,8 @@
 
 .splash {
   height: 100vh;
-  width: 100%;
-  position: absolute;
+  width: 100vw;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 1;
@@ -56,6 +56,54 @@
 
 .splash .splash__dynamic::after {
   content: "|";
+}
+
+.collection {
+  padding-top: 1.5rem;
+}
+
+.collection .collection__title {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid black;
+  font-family: "type font", "sans-serif";
+  letter-spacing: 0.2rem;
+}
+
+.collection .collection__grid {
+  width: 80%;
+  margin: 1rem auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.collection .collection__grid__item {
+  position: relative;
+}
+
+.collection .collection__grid__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.collection .collection__grid__item span {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: white;
+  font-family: "type font", "sans-serif";
 }
 
 * {

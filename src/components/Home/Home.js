@@ -73,6 +73,35 @@ const Home = () => {
           For <span className='splash__dynamic'></span>
         </h3>
       </section>
+      <section className='collection'>
+        <h2 className='collection__title'>Our Collection</h2>
+        <div className='collection__grid'>
+          <div className='collection__grid__item'>
+            <span>Olivetti</span>
+            <img src='/home-grid/olivetti.jpg' alt='olivetti' />
+          </div>
+          <div className='collection__grid__item'>
+            <span>Hermes</span>
+            <img src='/home-grid/hermes.jpg' alt='hermes' />
+          </div>
+          <div className='collection__grid__item'>
+            <span>Royal</span>
+            <img src='/home-grid/royal.jpg' alt='royal' />
+          </div>
+          <div className='collection__grid__item'>
+            <span>Underwood</span>
+            <img src='/home-grid/underwood.jpg' alt='underwood' />
+          </div>
+          <div className='collection__grid__item'>
+            <span>Smith Corona</span>
+            <img src='/home-grid/smith-corona.jpg' alt='smith corona' />
+          </div>
+          <div className='collection__grid__item'>
+            <span>Olympia</span>
+            <img src='/home-grid/Olympia.jpg' alt='olympia' />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
