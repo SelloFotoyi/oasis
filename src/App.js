@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {Route} from 'react-router-dom';
+import Home from './components/Home/Home';
 import Nav from './components/Navbar/Nav';
-import './css/App.css';
+import './sass/App.scss';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,11 +12,14 @@ function App() {
   }, [isMobileMenuOpen]);
   return (
     <div className='App'>
+      <Nav
+        isMobileMenuOpen={isMobileMenuOpen}
+        setIsMobileMenuOpen={setIsMobileMenuOpen}
+      />
       <Route>
-        <Nav
-          isMobileMenuOpen={isMobileMenuOpen}
-          setIsMobileMenuOpen={setIsMobileMenuOpen}
-        />
+        <Route path='/'>
+          <Home />
+        </Route>
       </Route>
     </div>
   );

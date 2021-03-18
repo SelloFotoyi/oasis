@@ -20,6 +20,44 @@
   src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
 }
 
+.splash {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  width: 100vw;
+  margin-top: 0rem;
+  background: url("../../assets/spalsh-bg.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splash .splash__title, .splash .splash__title-sub {
+  margin: 0.5rem 0 0 1.5rem;
+  font-family: "type font", 'Times New Roman';
+  letter-spacing: 0.5rem;
+  color: white;
+  font-weight: normal;
+}
+
+.splash .splash__title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.splash .splash__title-sub, .splash .splash__dynamic {
+  margin-top: 3.5rem;
+  font-size: 2.5rem;
+}
+
+.splash .splash__dynamic::after {
+  content: "|";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +76,6 @@
   top: 0;
   left: 0;
   height: 3rem;
-  border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,6 +84,7 @@
 
 .mobile-nav .mobile-nav__logo {
   text-decoration: none;
+  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 0.25rem;
@@ -69,7 +107,7 @@
   position: relative;
   width: 1.5rem;
   height: 0.1rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .mobile-nav .mobile-nav__btn__burger::before {
@@ -79,7 +117,7 @@
   top: -0.5rem;
   height: 0.1rem;
   width: 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .mobile-nav .mobile-nav__btn__burger::after {
@@ -89,7 +127,7 @@
   top: 0.5rem;
   height: 0.1rem;
   width: 1.5rem;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .mobile-nav .mobile-nav__btn__burger.open {
@@ -106,6 +144,9 @@
 }
 
 .nav {
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: all 1s;
   height: 100vh;
   width: 100vw;
@@ -115,14 +156,14 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.9);
   transform: translateY(-150vh);
 }
 
 .nav .nav__item {
   font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.5rem;
-  color: black;
+  letter-spacing: 0.1rem;
+  color: white;
   margin: 1.5rem 0;
   font-weight: bold;
   font-size: 2.5rem;
@@ -136,15 +177,5 @@
 
 .nav.open {
   transform: translateY(0);
-}
-
-.App {
-  text-align: center;
-}
-
-.App h1 {
-  color: green;
-  letter-spacing: 5px;
-  font-family: "type font";
 }
 /*# sourceMappingURL=App.css.map */

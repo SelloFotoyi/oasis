@@ -1,1 +1,37 @@
 @import '../../sass/config';
+
+.splash{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    width:100vw;
+    margin-top: 0rem;
+    background: url('../../assets/spalsh-bg.jpg') center / cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    #{&}__title, #{&}__title-sub{
+        margin: 0.5rem 0 0 1.5rem;
+        font-family: "type font", 'Times New Roman';
+        letter-spacing: 0.5rem;
+        color:white;
+        font-weight: normal;
+    }
+    #{&}__title{
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    #{&}__title-sub, #{&}__dynamic{
+        margin-top: 3.5rem;
+        font-size:2.5rem
+    }
+    #{&}__dynamic{
+        &::after{
+            content: "|";
+        }
+    }
+}
