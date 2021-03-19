@@ -2,7 +2,13 @@ import React, {useEffect, useState} from 'react';
 
 const Home = () => {
   const typerWords = ['typers', 'veterans', 'journalists'];
-  const [dynamicText, setDynamicText] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    setIsSubscribed(true);
+  };
 
   const TypeWriter = function (txtElement, words, wait = 3000) {
     this.txtElement = txtElement;
@@ -34,7 +40,7 @@ const Home = () => {
     this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
     //set initial type speed
-    let typeSpeed = 300;
+    let typeSpeed = 150;
     if (this.isDeleting) {
       typeSpeed /= 2;
     }
@@ -100,6 +106,70 @@ const Home = () => {
             <span>Olympia</span>
             <img src='/home-grid/Olympia.jpg' alt='olympia' />
           </div>
+        </div>
+      </section>
+      <section className='home-history'>
+        <div className='home-history__header'>
+          <span>
+            {' '}
+            <h1>History of typewriters|</h1>
+          </span>
+
+          <img src='/home-header/1.jpg' alt='history-header-img' />
+        </div>
+        <div className='home-history__info'>
+          <p>
+            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
+            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
+            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
+            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
+            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
+            pariatur eiusmod aliquip et ad.
+          </p>
+          <p>
+            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
+            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
+            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
+            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
+            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
+            pariatur eiusmod aliquip et ad.
+          </p>
+          <p>
+            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
+            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
+            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
+            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
+            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
+            pariatur eiusmod aliquip et ad.
+          </p>
+        </div>
+      </section>
+      <section className='home-subscribe'>
+        <div className='home-subscribe__header'>
+          <span>
+            {' '}
+            <h1>Subscribe to our newsletter|</h1>
+            {isSubscribed ? (
+              <h3 className='home-subscribe__header__thanks'>
+                Thank you, and welcome to The Typewriter Oasis!
+              </h3>
+            ) : (
+              <form
+                className='home-subscribe__header__form'
+                onSubmit={onFormSubmit}
+              >
+                <input
+                  type='text'
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  placeholder='user@email.com'
+                  className='email-input'
+                />
+                <button>Subscribe</button>
+              </form>
+            )}
+          </span>
+          <img src='/home-header/2.jpg' alt='history-header-img' />
         </div>
       </section>
     </main>

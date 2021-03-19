@@ -9,6 +9,29 @@
   src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
 }
 
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -20,14 +43,37 @@
   src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
 }
 
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .splash {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   top: 0;
   left: 0;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden;
   width: 100vw;
   margin-top: 0rem;
   background: url("../../assets/spalsh-bg.jpg") center/cover no-repeat;
@@ -59,7 +105,7 @@
 }
 
 .collection {
-  padding-top: 1.5rem;
+  padding-top: 3rem;
 }
 
 .collection .collection__title {
@@ -78,6 +124,7 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: 15rem;
 }
 
 .collection .collection__grid__item {
@@ -106,6 +153,126 @@
   font-family: "type font", "sans-serif";
 }
 
+.home-history {
+  width: 100%;
+}
+
+.home-history .home-history__header {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+.home-history .home-history__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.home-history .home-history__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-history .home-history__info {
+  width: 95%;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+.home-history .home-history__info p {
+  padding: 0.5rem;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  line-height: 1.25;
+  text-align: justify;
+}
+
+.home-subscribe {
+  width: 100%;
+  height: 70vh;
+}
+
+.home-subscribe .home-subscribe__header {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.home-subscribe .home-subscribe__header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-subscribe .home-subscribe__header span {
+  flex-direction: column;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  letter-spacing: 0.2rem;
+}
+
+.home-subscribe .home-subscribe__header span h3 {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  margin-top: 1rem;
+  color: white;
+}
+
+.home-subscribe .home-subscribe__header span form {
+  height: 3rem;
+  width: 90%;
+  margin: 0.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span form .email-input {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.2rem;
+  color: white;
+  margin: 0 1rem;
+  flex: 3;
+  outline: none;
+  background: none;
+  height: 80%;
+  border: none;
+  border-bottom: 1px solid white;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.home-subscribe .home-subscribe__header span form .email-input:focus {
+  border-bottom: 2.5px solid white;
+}
+
+.home-subscribe .home-subscribe__header span form button {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 1s;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  flex: 1;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  font-weight: bold;
+  height: 80%;
+  cursor: pointer;
+}
+
+.home-subscribe .home-subscribe__header span form button:hover {
+  background-color: black;
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -115,6 +282,29 @@
 @font-face {
   font-family: "type font";
   src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
+}
+
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .mobile-nav {
@@ -128,6 +318,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 5;
+  background-color: black;
 }
 
 .mobile-nav .mobile-nav__logo {
@@ -192,11 +383,12 @@
 }
 
 .nav {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   transition: all 1s;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   overflow: hidden;
   display: flex;
@@ -204,7 +396,7 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-  background: rgba(0, 0, 0, 0.9);
+  background: black;
   transform: translateY(-150vh);
 }
 
@@ -225,5 +417,121 @@
 
 .nav.open {
   transform: translateY(0);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "type font";
+  src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
+}
+
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  height: 12rem;
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  border-top: 1px solid black;
+}
+
+.footer .footer-container {
+  width: 85%;
+  display: flex;
+  margin: 0 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .footer-container h1 {
+  margin-right: auto;
+  margin-left: 1rem;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+}
+
+.footer .footer-container__sub {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+
+.footer .footer-container__sub__links {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .footer-container__sub__links__link {
+  transition: all 1s;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  margin: 0.25rem 0.5rem;
+}
+
+.footer .footer-container__sub__links__link:hover {
+  font-weight: bold;
+}
+
+.footer .footer-container__sub__socials {
+  width: 50%;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.footer .footer-container__sub__socials .icon {
+  transform: scale(1.5);
+  margin: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.footer .footer-container__sub__socials .icon:hover {
+  transition: all 1s;
+  opacity: 0.8;
+  transform: scale(1.75);
+}
+
+.footer p {
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.App {
+  overflow: hidden;
 }
 /*# sourceMappingURL=App.css.map */

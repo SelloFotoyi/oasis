@@ -12,6 +12,7 @@
     justify-content:space-between;
     align-items: center;
     z-index: 5;
+    background-color: $primary-color;
     #{&}__logo{
         text-decoration: none;
         color: white;
@@ -68,11 +69,12 @@
 }
 
 .nav{
+    overflow: hidden;
     position: absolute;
     top: 0;
     left:0;
     @include transition-ease;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     overflow: hidden;
     display: flex;
@@ -80,7 +82,7 @@
     justify-content: center;
     align-items: center;
     z-index: 3;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,1);
     transform: translateY(-150vh);
     #{&}__item{
         font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

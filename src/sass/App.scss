@@ -1,4 +1,7 @@
-@import './config', '../components/Home/home', '../components/Navbar/nav';
+@import './config', '../components/Home/home', '../components/Navbar/nav', '../components/Footer/footer';
 
 
 
+.App{
+    overflow:hidden;
+}
