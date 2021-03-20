@@ -6,10 +6,12 @@ import Home from './components/Home/Home';
 import Nav from './components/Navbar/Nav';
 import './sass/App.scss';
 import Products from './components/Products/Products';
+import ProductInfo from './components/Products/Product/ProductInfo';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -26,8 +28,8 @@ function App() {
     try {
       const {data} = await commerce.products.list();
       setProducts(data);
+      console.log(data);
       setIsLoading(false);
-      console.log(isLoading);
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +47,16 @@ function App() {
         </Route>
         <Route exact path='/shop'>
           {!isMobileMenuOpen && (
-            <Products products={products} isLoading={isLoading} />
+            <Products
+              products={products}
+              setProduct={setProduct}
+              isLoading={isLoading}
+            />
+          )}
+        </Route>
+        <Route exact path='/product-info'>
+          {!isMobileMenuOpen && (
+            <ProductInfo product={product} setProduct={setProduct} />
           )}
         </Route>
       </Route>

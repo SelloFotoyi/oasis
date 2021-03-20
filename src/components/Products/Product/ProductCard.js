@@ -1,9 +1,16 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom';
 
-const ProductCard = ({product}) => {
+const ProductCard = ({product, setProduct}) => {
+  const history = useHistory();
   useEffect(() => {
-    console.log(product.price.formatted_with_symbol);
+    //  console.log(product.price.formatted_with_symbol);
   }, []);
+
+  const toInfo = () => {
+    setProduct(product);
+    history.push('/product-info');
+  };
 
   return (
     <div className='product-card'>
@@ -18,7 +25,7 @@ const ProductCard = ({product}) => {
         </p>
         <p className='product-card__info__span'>
           <button>Collect</button>
-          <button>Details</button>
+          <button onClick={toInfo}>Details</button>
         </p>
       </div>
       <img src={product.media.source} alt='product-image' />

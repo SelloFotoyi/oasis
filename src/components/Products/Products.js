@@ -2,7 +2,7 @@ import React from 'react';
 import LoadGif from '../LoadGif';
 import ProductCard from './Product/ProductCard';
 
-const Products = ({products, isLoading}) => {
+const Products = ({products, setProduct, isLoading}) => {
   return (
     <>
       {isLoading ? (
@@ -10,7 +10,11 @@ const Products = ({products, isLoading}) => {
       ) : (
         <div className='products'>
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+              setProduct={setProduct}
+            />
           ))}
         </div>
       )}
