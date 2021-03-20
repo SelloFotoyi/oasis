@@ -11,7 +11,9 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <section className='footer-container'>
-        <h1>TO</h1>
+        <Link to='/' className='footer-container__home'>
+          TO
+        </Link>
         <div className='footer-container__sub'>
           <div className='footer-container__sub__links'>
             <a href='' className='footer-container__sub__links__link'>
