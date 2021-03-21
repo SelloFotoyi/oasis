@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import Products from '../Products';
 
-const ProductInfo = ({product, setProduct}) => {
+const ProductInfo = ({product, setProduct, addToCart}) => {
   const [mainImg, setMainImg] = useState(product.media.source);
   const history = useHistory();
 
@@ -34,7 +34,9 @@ const ProductInfo = ({product, setProduct}) => {
           <h1>{product.name}</h1>
           <p id='product-description'></p>
           <span>
-            <button>Add to cart</button>
+            <button onClick={() => addToCart(product.id, 1)}>
+              Add to cart
+            </button>
             <button onClick={() => history.goBack()}>Back to shop</button>
           </span>
         </div>

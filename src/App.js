@@ -7,6 +7,7 @@ import Nav from './components/Navbar/Nav';
 import './sass/App.scss';
 import Products from './components/Products/Products';
 import ProductInfo from './components/Products/Product/ProductInfo';
+import Cart from './components/Cart/Cart';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -51,6 +52,21 @@ function App() {
     }
   };
 
+  const updateCartQty = async (itemId, quantity) => {
+    const {cart} = await commerce.cart.update(itemId, {quantity});
+    setCart(cart);
+  };
+
+  const removeFromCart = async (itemId) => {
+    const {cart} = await commerce.cart.remove(itemId);
+    setCart(cart);
+  };
+
+  const emptyCart = async () => {
+    const {cart} = await commerce.cart.empty();
+    setCart(cart);
+  };
+
   return (
     <div className='App'>
       <Nav
@@ -74,7 +90,21 @@ function App() {
         </Route>
         <Route exact path='/product-info'>
           {!isMobileMenuOpen && (
-            <ProductInfo product={product} setProduct={setProduct} />
+            <ProductInfo
+              product={product}
+              setProduct={setProduct}
+              addToCart={addToCart}
+            />
+          )}
+        </Route>
+        <Route exact path='/cart'>
+          {!isMobileMenuOpen && (
+            <Cart
+              cart={cart}
+              updateCartQty={updateCartQty}
+              removeFromCart={removeFromCart}
+              emptyCart={emptyCart}
+            />
           )}
         </Route>
       </Route>

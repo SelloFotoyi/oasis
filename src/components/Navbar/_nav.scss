@@ -124,4 +124,9 @@
     &.open {
         transform: translateY(0);
     }
+    .nav__item.active{
+        border-bottom: 2px solid white;
+        padding-bottom: 0.5rem;
+        color: red;
+    }
 }

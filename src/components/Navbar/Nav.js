@@ -1,13 +1,25 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
 const Nav = ({isMobileMenuOpen, setIsMobileMenuOpen, totalItems}) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      console.log(location.pathname);
+    }
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <div className='mobile-nav'>
-        <Link to='/' className='mobile-nav__logo'>
+        <Link
+          to='/'
+          className='mobile-nav__logo'
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
           TO
         </Link>
         <Link to='/cart' style={{textDecoration: 'none'}}>
@@ -29,14 +41,26 @@ const Nav = ({isMobileMenuOpen, setIsMobileMenuOpen, totalItems}) => {
         <Link to='/' className='nav__item logo'>
           TO
         </Link>
-        <Link to='/cart'>
+        <Link to='/cart' onClick={() => setIsMobileMenuOpen(false)}>
           <FontAwesomeIcon icon={faShoppingCart} className='nav__item__cart' />
           <span className='nav__item__cart__items'>{totalItems}</span>
         </Link>
-        <Link to='/shop' className='nav__item'>
+        <Link
+          to='/shop'
+          className={`nav__item ${
+            location.pathname === '/shop' ? ' active' : ''
+          }}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
           Shop
         </Link>
-        <Link to='/gallery' className='nav__item'>
+        <Link
+          to='/gallery'
+          className={`nav__item ${
+            location.pathname === '/gallery' ? 'active' : ''
+          }}`}
+          onClick={() => setIsMobileMenuOpen(false)}
+        >
           Gallery
         </Link>
       </nav>

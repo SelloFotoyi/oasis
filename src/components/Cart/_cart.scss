@@ -1,0 +1,99 @@
+@import '../../sass/config';
+
+.cart{
+    width:100%; 
+    height:100%; 
+    overflow:hidden; 
+    display:flex;
+    flex-direction:column; 
+    justify-content: center; 
+    align-items: center;
+    padding-top: 3.5rem;
+    
+    h1,h2{
+        @include type-font;
+        letter-spacing: 0.2rem;
+        width:100%; 
+        margin: 1.5rem; 
+        text-align: center; 
+    }
+    &-btns{
+        width:60%;
+        display:flex; 
+        justify-content: space-between; 
+        align-items: center;
+        button{
+            margin:0 0.5rem;
+            @include btn; 
+            border:1px solid black;
+        }
+    }
+}
+.cart-null{
+    padding-top: 3.5rem;
+    width:100%;
+    display:flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__icon{
+        margin: 1.5rem 0;
+        opacity: 0.5;
+        transform: scale(2.5);
+    }
+    &__text, h3{
+        color:black;
+        @include type-font;
+    }
+}
+
+.cart-item{
+    width:60%; 
+    margin: 1rem auto;
+    display:flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    border: 1px solid black;
+    &__img{
+        width:100%;
+        height:10rem;
+        margin: 0 auto;
+        img{
+            @include img-props;
+        }
+    }
+    &__name{
+        @include type-font;
+        margin:0.5rem 0;
+        font-size: 1.25rem;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+    }
+    &__qty{
+        margin:1rem 0;
+        button{
+            @include btn;
+            height:2rem;
+            width:3.5rem;
+            margin: 0 1rem;
+            border:1px solid transparent;
+        }
+    }
+    &__remove-btn{
+        @include btn;
+        margin: 1rem 0;
+        width:50%;
+        border: 1px solid red;
+        &:hover{
+            background-color: red;
+        }
+
+    }
+    &__total{
+        @include type-font;
+        font-size: 1.5rem;
+        font-weight: bold; 
+        margin-bottom:1rem;
+    }
+}
