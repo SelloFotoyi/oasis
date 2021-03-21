@@ -12,16 +12,14 @@ function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
+  const [cart, setCart] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchProducts();
+    fecthCart();
   }, []);
   console.log();
-
-  // useEffect(() => {
-  //   console.log(isMobileMenuOpen);
-  // }, [isMobileMenuOpen]);
 
   const fetchProducts = async () => {
     setIsLoading(true);
@@ -35,11 +33,30 @@ function App() {
     }
   };
 
+  const fecthCart = async () => {
+    try {
+      setCart(await commerce.cart.retrieve());
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const addToCart = async (productId, quantity) => {
+    try {
+      const {cart} = await commerce.cart.add(productId, quantity);
+      setCart(cart);
+      console.log(cart);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className='App'>
       <Nav
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
+        totalItems={cart.total_items}
       />
       <Route>
         <Route exact path='/'>
@@ -51,6 +68,7 @@ function App() {
               products={products}
               setProduct={setProduct}
               isLoading={isLoading}
+              addToCart={addToCart}
             />
           )}
         </Route>

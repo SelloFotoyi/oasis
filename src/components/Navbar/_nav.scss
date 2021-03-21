@@ -21,6 +21,17 @@
         letter-spacing: 0.25rem;
         font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    #{&}__cart{
+        color:white;
+    }
+    #{&}__cart__items{
+        color:white;
+        @include type-font;
+        font-weight: bold;
+        margin-left: 0.1rem;
+        position:absolute;
+        bottom:0;
+    }
     #{&}__btn{
         z-index: 5;
         cursor: pointer;
@@ -95,6 +106,19 @@
         text-decoration: none;
         &.logo{
             display:none;
+        }
+        &__cart{
+            color:white;
+            display: none;
+        }
+        &__cart__items{
+            display: none;
+            color:white;
+            @include type-font;
+            font-weight: bold;
+            margin-left: 0.1rem;
+            position:absolute;
+            bottom:1rem;
         }
     }
     &.open {

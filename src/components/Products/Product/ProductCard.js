@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 
-const ProductCard = ({product, setProduct}) => {
+const ProductCard = ({product, setProduct, addToCart}) => {
   const history = useHistory();
   useEffect(() => {
     //  console.log(product.price.formatted_with_symbol);
@@ -24,7 +24,7 @@ const ProductCard = ({product, setProduct}) => {
           {product.price.formatted_with_symbol}
         </p>
         <p className='product-card__info__span'>
-          <button>Collect</button>
+          <button onClick={() => addToCart(product.id, 1)}>Collect</button>
           <button onClick={toInfo}>Details</button>
         </p>
       </div>
