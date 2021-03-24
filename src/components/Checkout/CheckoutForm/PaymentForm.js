@@ -91,7 +91,6 @@ const PaymentForm = ({
       </div>
       <h2 style={{width: '100%', textAlign: 'center', margin: '1rem 0'}}>OR</h2>
       <div className='payment__card'>
-        {/* <FontAwesomeIcon icon={faCreditCard} className='icon' /> */}
         <Elements stripe={stripePromise}>
           <ElementsConsumer>
             {({elements, stripe}) => (
@@ -102,7 +101,10 @@ const PaymentForm = ({
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                   <button onClick={prevStep}>Back</button>
                   <button type='submit'>
-                    Pay {checkoutToken.live.subtotal.formatted_with_symbol}
+                    {`Pay  R${
+                      checkoutToken.live.subtotal.raw +
+                      shippingData.shippingOption.raw
+                    }.00 `}{' '}
                   </button>
                 </div>
               </form>

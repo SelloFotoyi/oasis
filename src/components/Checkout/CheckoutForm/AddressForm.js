@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useForm, FormProvider} from 'react-hook-form';
 import {Link, useHistory} from 'react-router-dom';
 import {commerce} from '../../../lib/commerce';
+import LoadGif from '../../LoadGif';
 
 const AddressForm = ({checkoutToken, next}) => {
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -11,6 +12,7 @@ const AddressForm = ({checkoutToken, next}) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState('');
   const methods = useForm();
+  const errors = methods.errors;
   const history = useHistory();
 
   useEffect(() => {
@@ -53,11 +55,11 @@ const AddressForm = ({checkoutToken, next}) => {
     );
     setShippingOptions(options);
     setShippingOption(options[0].price);
-    console.log(shippingOption);
   };
   return (
     <div className='address'>
       <h3 className='address__title'>Shipping details</h3>
+      {/* {shippingCountry && shippingSubdivision && shippingOption ? ( */}
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>
@@ -73,33 +75,66 @@ const AddressForm = ({checkoutToken, next}) => {
             type='text'
             placeholder='First name'
             name='firstName'
-            ref={methods.register}
+            ref={methods.register({required: 'required field'})}
           />
-
+          {errors.firstName && (
+            <p style={{color: 'red', borderBottom: '1rem'}}>
+              {errors.firstName.message}
+            </p>
+          )}
           <input
             type='text'
             placeholder='Last name'
             name='lastName'
-            ref={methods.register}
+            ref={methods.register({required: 'reuired field'})}
           />
+          {errors.lastName && (
+            <p style={{color: 'red', borderBottom: '1rem'}}>
+              {errors.lastName.message}
+            </p>
+          )}
           <input
             type='text'
             placeholder='Street address'
             name='address1'
-            ref={methods.register}
+            ref={methods.register({required: 'required field'})}
           />
+          {errors.address1 && (
+            <p style={{color: 'red', borderBottom: '1rem'}}>
+              {errors.address1.message}
+            </p>
+          )}
           <input
             type='text'
             placeholder='City'
             name='city'
-            ref={methods.register}
+            ref={methods.register({required: 'required field'})}
           />
+          {errors.city && (
+            <p style={{color: 'red', borderBottom: '1rem'}}>
+              {errors.city.message}
+            </p>
+          )}
           <input
             type='text'
             placeholder='Email address'
             name='email'
             ref={methods.register}
           />
+          <input
+            type='number'
+            placeholder='Phone numbers'
+            name='phone'
+            ref={methods.register({
+              required: true,
+              minLength: {value: 10, message: 'mininmum of 10 digits expected'},
+            })}
+          />
+          {errors.phone && (
+            <p style={{color: 'red', borderBottom: '1rem'}}>
+              {errors.phone.message}
+            </p>
+          )}
           <select
             name='shippingCountry'
             ref={methods.register}
@@ -151,6 +186,8 @@ const AddressForm = ({checkoutToken, next}) => {
           </div>
         </form>
       </FormProvider>
+      {/* // ) : ( // <LoadGif />
+      // )} */}
     </div>
   );
 };
