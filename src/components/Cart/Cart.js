@@ -1,10 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import CartItem from './CartItem';
 import {faOpencart} from '@fortawesome/free-brands-svg-icons';
 
 const Cart = ({cart, updateCartQty, removeFromCart, emptyCart}) => {
+  const history = useHistory();
   return (
     <div className='cart'>
       {cart.line_items.length > 0 ? (
@@ -35,7 +36,7 @@ const Cart = ({cart, updateCartQty, removeFromCart, emptyCart}) => {
       {cart.line_items.length > 0 && (
         <div className='cart-btns'>
           <button onClick={emptyCart}>Clear cart</button>
-          <button>Checkout</button>
+          <button onClick={() => history.push('/checkout')}>Checkout</button>
         </div>
       )}
     </div>

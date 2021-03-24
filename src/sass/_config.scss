@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap');
+
 $primary-color: black;
 
 *{
@@ -15,6 +17,15 @@ $primary-color: black;
 
 @mixin type-font{
     font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+@mixin roboto{
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
+}
+
+@mixin center{
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @mixin img-props{

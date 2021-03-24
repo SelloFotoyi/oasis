@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -1022,6 +1031,493 @@
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "type font";
+  src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
+}
+
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.checkout {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.review {
+  width: 70%;
+  margin: 1.5rem auto;
+  border: 1px solid lightgrey;
+}
+
+.review__title {
+  padding: 0.75rem;
+  width: 100%;
+  text-align: center;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  background: linear-gradient(to right, black, grey);
+}
+
+.review ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review ul li {
+  width: 95%;
+  border-bottom: 1px solid black;
+  padding: 0.5rem 5rem;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.review ul li .name {
+  font-size: 1.2rem;
+}
+
+.review ul li .qty {
+  font-size: 1rem;
+}
+
+.review ul li .price {
+  font-weight: bold;
+}
+
+.review__amount {
+  width: 100%;
+  text-align: center;
+  margin: 0.5rem 0;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+}
+
+.review__amount.total {
+  font-size: 1.25rem;
+}
+
+.review-btn {
+  width: 80%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.review-btn button {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  flex: 1;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  font-weight: bold;
+  height: 80%;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.review-btn button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+.confirmation {
+  width: 80%;
+  height: 10rem;
+  margin: 1.5rem auto;
+  border: 1px solid lightgrey;
+}
+
+.confirmation__title {
+  width: 100%;
+  text-align: center;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.confirmation-btn {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirmation-btn button {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  flex: 1;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  font-weight: bold;
+  height: 80%;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.confirmation-btn button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "type font";
+  src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
+}
+
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tracker {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
+  width: 85%;
+  margin: 4rem auto 1rem auto;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.tracker__title {
+  letter-spacing: 0.1rem;
+  margin: 1rem 0;
+}
+
+.tracker__steps {
+  width: 65%;
+  height: 2.5rem;
+  margin: 0.5rem auto 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tracker__steps__step {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.tracker__steps__step.active {
+  background-color: blue;
+}
+
+.tracker__steps__step.complete {
+  background-color: green;
+}
+
+.tracker__steps__step.inactive {
+  background-color: grey;
+}
+
+.tracker__steps__line {
+  flex: 1;
+  height: 0.1rem;
+  border-top: 1px solid black;
+}
+
+.tracker__texts {
+  width: 72.5%;
+  height: 2.5rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tracker__texts__text.active {
+  opacity: 1;
+}
+
+.tracker__texts__text.inactive {
+  opacity: 0.5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "type font";
+  src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
+}
+
+.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-subscribe .home-subscribe__header span h1 {
+  color: white;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.address {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana,sans-serif;
+  width: 90%;
+  margin: 1.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.address__title {
+  width: 80%;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(to right, black, lightgrey);
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.2rem;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.address__btns {
+  margin: 1.5rem 0;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.address__btns button {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  flex: 1;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  font-weight: bold;
+  height: 80%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin: 0 1rem;
+  border: 1px solid black;
+}
+
+.address__btns button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+.address form {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+  border: 1px solid lightgrey;
+  border-top: none;
+}
+
+.address form input {
+  margin: 0.5rem 0 1rem 0;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.address form input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.address form select {
+  margin: 0.5rem 0 1rem 0;
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.payment {
+  width: 80%;
+  margin: 1.5rem auto;
+  border: 1px solid lightgrey;
+  border-top: none;
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.payment__title {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem;
+  color: white;
+  background: linear-gradient(to right, black, lightgrey);
+}
+
+.payment__options {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment__options__option {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 2.5px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.payment__options__option:hover {
+  transition: all 0.5s;
+  background-color: lightgrey;
+}
+
+.payment__options__option .icon {
+  transform: scale(2);
+  margin-right: 1.5rem;
+}
+
+.payment__options__option span {
+  font-weight: bold;
+}
+
+.payment__card {
+  border: 2.5px solid lightgrey;
+  height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.payment__card.icon {
+  color: red;
+}
+
+.payment__card button {
+  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
+  outline: none;
+  border: none;
+  flex: 1;
+  padding: 0.25rem 0.25rem 0.5rem 0.25rem;
+  font-weight: bold;
+  height: 80%;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin: 0 0.5rem;
+}
+
+.payment__card button:hover {
+  background-color: black;
+  border: 1px solid white;
+  color: white;
 }
 
 .App {

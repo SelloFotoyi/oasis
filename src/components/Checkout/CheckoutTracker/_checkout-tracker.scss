@@ -1,0 +1,60 @@
+@import '../../../sass/config';
+
+.tracker{
+    @include roboto;
+    width: 85%;
+    margin: 4rem auto 1rem auto;
+    height:10rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
+    &__title{
+        letter-spacing: 0.1rem;
+        margin: 1rem 0;
+    }
+    &__steps{
+        width: 65%;
+        height:2.5rem;
+        margin: 0.5rem auto 0 auto;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &__step{
+            width: 2rem;
+            height: 2rem;
+            @include center;
+            border-radius: 50%;
+            &.active{
+                background-color: blue;
+            }
+            &.complete{
+                background-color:green;
+            }
+            &.inactive{
+                background-color: grey;
+            }
+        }
+        &__line{
+            flex:1;
+            height:0.1rem;
+            border-top: 1px solid black;
+        }
+    }
+    &__texts{
+        width: 72.5%;
+        height:2.5rem;
+        margin: 0 auto ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__text{
+            &.active{
+                opacity: 1;
+            }
+            &.inactive{
+                opacity:0.5;
+            }
+        }
+    }
+}

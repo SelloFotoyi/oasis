@@ -8,6 +8,9 @@ import './sass/App.scss';
 import Products from './components/Products/Products';
 import ProductInfo from './components/Products/Product/ProductInfo';
 import Cart from './components/Cart/Cart';
+import Form from './components/Form';
+import Checkout from './components/Checkout/Checkout';
+import Confirmation from './components/Checkout/Confirmation';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,12 +18,20 @@ function App() {
   const [product, setProduct] = useState({});
   const [cart, setCart] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchProducts();
     fecthCart();
   }, []);
-  console.log();
+
+  // useEffect(() => {
+  //   effect
+  //   return () => {
+  //     cleanup
+  //   }
+  // }, [])
 
   const fetchProducts = async () => {
     setIsLoading(true);
@@ -67,6 +78,21 @@ function App() {
     setCart(cart);
   };
 
+  const refreshCart = async () => {
+    const res = await commerce.cart.refresh();
+    setCart(res);
+  };
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try {
+      const incomingOrder = await commerce.checkout.capture(checkoutTokenId);
+      setOrder(incomingOrder);
+      refreshCart();
+    } catch (error) {
+      setErrorMessage(error.data.error.message);
+    }
+  };
+
   return (
     <div className='App'>
       <Nav
@@ -74,6 +100,7 @@ function App() {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         totalItems={cart.total_items}
       />
+
       <Route>
         <Route exact path='/'>
           {!isMobileMenuOpen && <Home />}
@@ -104,6 +131,17 @@ function App() {
               updateCartQty={updateCartQty}
               removeFromCart={removeFromCart}
               emptyCart={emptyCart}
+            />
+          )}
+        </Route>
+        <Route exact path='/checkout'>
+          {!isMobileMenuOpen && (
+            <Checkout
+              cart={cart}
+              order={order}
+              handleCaptureCheckout={handleCaptureCheckout}
+              error={errorMessage}
+              refreshCart={refreshCart}
             />
           )}
         </Route>
