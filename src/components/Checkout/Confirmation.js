@@ -11,19 +11,13 @@ const Confirmation = ({
 }) => {
   const history = useHistory();
 
-  useEffect(() => {
-    console.log(shippingData);
-  }, []);
-
   const goHome = () => {
     refreshCart();
     history.push('/');
   };
   return (
     <div className='confirmation'>
-      {order.customer ? (
-        <section>'x</section>
-      ) : isFinished ? (
+      {isFinished ? (
         <section>
           <h2 className='confirmation__title'>
             Thank you for your purchase, {shippingData.firstName}

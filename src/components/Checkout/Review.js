@@ -2,9 +2,6 @@ import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 
 const Review = ({checkoutToken, order, shippingData}) => {
-  useEffect(() => {
-    console.log(checkoutToken);
-  }, [checkoutToken]);
   return (
     <div className='review'>
       <h2 className='review__title'>Order summary</h2>

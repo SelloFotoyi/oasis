@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import CartItem from './CartItem';
@@ -6,6 +6,16 @@ import {faOpencart} from '@fortawesome/free-brands-svg-icons';
 
 const Cart = ({cart, updateCartQty, removeFromCart, emptyCart}) => {
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = "Cart | Typewriter Oasis"
+  }, [])
+
+  useEffect(() => {
+    if (!cart) {
+      history.push('/');
+    }
+  }, [cart]);
   return (
     <div className='cart'>
       {cart.line_items.length > 0 ? (

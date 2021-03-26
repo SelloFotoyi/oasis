@@ -6,12 +6,6 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 const Nav = ({isMobileMenuOpen, setIsMobileMenuOpen, totalItems}) => {
   const location = useLocation();
 
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      console.log(location.pathname);
-    }
-  }, [isMobileMenuOpen]);
-
   return (
     <>
       <div className='mobile-nav'>

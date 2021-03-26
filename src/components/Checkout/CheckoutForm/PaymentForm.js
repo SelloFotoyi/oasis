@@ -100,12 +100,7 @@ const PaymentForm = ({
                 <br />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                   <button onClick={prevStep}>Back</button>
-                  <button type='submit'>
-                    {`Pay  R${
-                      checkoutToken.live.subtotal.raw +
-                      shippingData.shippingOption.raw
-                    }.00 `}{' '}
-                  </button>
+                  <button type='submit'>Pay</button>
                 </div>
               </form>
             )}

@@ -16,6 +16,7 @@ const Checkout = ({cart, order, handleCaptureCheckout, error, refreshCart}) => {
   const history = useHistory();
 
   useEffect(() => {
+    document.title = 'Checkout | Typewriter Oasis';
     const generateToken = async () => {
       try {
         const token = await commerce.checkout.generateToken(cart.id, {
@@ -28,10 +29,6 @@ const Checkout = ({cart, order, handleCaptureCheckout, error, refreshCart}) => {
     };
     generateToken();
   }, []);
-
-  useEffect(() => {
-    console.log(checkoutStep);
-  }, [checkoutStep]);
 
   const Form = () =>
     checkoutStep === 0 ? (

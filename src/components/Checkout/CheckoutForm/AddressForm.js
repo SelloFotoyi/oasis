@@ -59,7 +59,7 @@ const AddressForm = ({checkoutToken, next}) => {
   return (
     <div className='address'>
       <h3 className='address__title'>Shipping details</h3>
-      {/* {shippingCountry && shippingSubdivision && shippingOption ? ( */}
+      {/* {shippingCountry ? ( */}
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>
@@ -127,7 +127,10 @@ const AddressForm = ({checkoutToken, next}) => {
             name='phone'
             ref={methods.register({
               required: true,
-              minLength: {value: 10, message: 'mininmum of 10 digits expected'},
+              minLength: {
+                value: 10,
+                message: 'mininmum of 10 digits expected',
+              },
             })}
           />
           {errors.phone && (
@@ -180,14 +183,15 @@ const AddressForm = ({checkoutToken, next}) => {
           </select>
           <div className='address__btns'>
             <button type='button' onClick={() => history.push('/cart')}>
-              Back to cart
+              Cart
             </button>
             <button type='submit'>Next</button>
           </div>
         </form>
       </FormProvider>
-      {/* // ) : ( // <LoadGif />
-      // )} */}
+      {/* ) : (
+        <LoadGif />
+      )} */}
     </div>
   );
 };

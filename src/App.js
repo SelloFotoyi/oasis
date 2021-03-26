@@ -8,9 +8,9 @@ import './sass/App.scss';
 import Products from './components/Products/Products';
 import ProductInfo from './components/Products/Product/ProductInfo';
 import Cart from './components/Cart/Cart';
-import Form from './components/Form';
 import Checkout from './components/Checkout/Checkout';
 import Confirmation from './components/Checkout/Confirmation';
+import Gallery from './components/Gallery/Gallery';
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,19 +26,11 @@ function App() {
     fecthCart();
   }, []);
 
-  // useEffect(() => {
-  //   effect
-  //   return () => {
-  //     cleanup
-  //   }
-  // }, [])
-
   const fetchProducts = async () => {
     setIsLoading(true);
     try {
       const {data} = await commerce.products.list();
       setProducts(data);
-      console.log(data);
       setIsLoading(false);
     } catch (error) {
       console.log(error);
@@ -57,7 +49,6 @@ function App() {
     try {
       const {cart} = await commerce.cart.add(productId, quantity);
       setCart(cart);
-      console.log(cart);
     } catch (error) {
       console.log(error.message);
     }
@@ -144,6 +135,9 @@ function App() {
               refreshCart={refreshCart}
             />
           )}
+        </Route>
+        <Route exact path='/gallery'>
+          {!isMobileMenuOpen && <Gallery />}
         </Route>
       </Route>
       <Footer />

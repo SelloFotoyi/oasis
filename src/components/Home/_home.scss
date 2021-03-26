@@ -10,36 +10,76 @@
     overflow-x: hidden;
     width:100vw;
     margin-top: 0rem;
-    background: url('../../assets/spalsh-bg.jpg')  center/cover no-repeat;
+    background: url('../../assets/spalsh-bg-mobile.jpg')  center/cover no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     #{&}__title, #{&}__title-sub{
+        z-index: 2;
         margin: 0.5rem 0 0 1.5rem;
         font-family: "type font", 'Times New Roman';
         letter-spacing: 0.5rem;
         color:white;
         font-weight: normal;
+        animation: splash-title 1s ease-in-out;
     }
     #{&}__title{
         font-size: 3rem;
         font-weight: bold;
+        margin-bottom: 2rem;
     }
+     #{&}__title-sub{
+         display:flex; 
+         flex-direction: column;
+     }
     #{&}__title-sub, #{&}__dynamic{
-        margin-top: 3.5rem;
-        font-size:2.5rem
+        margin-top: 0rem;
+        font-size:2rem;
+        letter-spacing: 0.1rem;
     }
     #{&}__dynamic{
+        z-index: 2;
         &::after{
             content: "|";
         }
     }
+    #{&}__overlay{
+        position: absolute;
+        padding-top:5rem;
+        z-index: 1;
+        left: 0; 
+        right: 0;
+        width:100%; 
+        height: 100%; 
+        background-color:rgba(0,0,0,0.75);
+        animation: overlay 2s 1s ease-out;
+    }
+}
+@keyframes overlay {
+    from{
+         background-color:rgba(0,0,0,0);
+    }
+    to{
+         background-color:rgba(0,0,0,0.75);
+    }
+}
+@keyframes splash-title{ 
+    from{
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
 }
 
 .collection{
-    padding-top: 3rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     #{&}__title{
-        width: 40%;
+        width: 70%;
         margin: auto;
         text-align: center;
         padding-bottom: 0.5rem;
@@ -49,13 +89,15 @@
     }
     #{&}__grid{
         width: 80%;
-        margin: 1rem auto;
+        margin:1rem;
         display: grid;
         gap:1rem;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        grid-auto-rows: 15rem;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-auto-rows: 75px;
         &__item{
             position: relative;
+            width: 100%; 
+            height: 100%; 
             img{
                 width: 100%;
                 height: 100%;
@@ -72,7 +114,7 @@
                 display: flex;
                 justify-content:center;
                 align-items: center;
-                font-size: 2.5rem;
+                font-size: 1rem;
                 color:white;
                 font-family: "type font", "sans-serif";
             }
@@ -109,11 +151,11 @@
         margin: auto;
         padding: 1.5rem;
         p{
-            padding:0.5rem;
+            padding:0.1rem;
             @include type-font;
             letter-spacing: 0.1rem;
             line-height: 1.25;
-            text-align: justify;
+            text-align: left;
         }
     }
 }
@@ -145,20 +187,21 @@
             }
             form{
                 height: 3rem;
-                width: 90%;
-                margin: 0.5rem auto;
+                width: 40%;
+                margin: 3.5rem auto;
                 display: flex;
                 justify-content:center;
                 align-items:center;
+                flex-direction: column;
                 .email-input{
                     @include type-font;
                     letter-spacing: 0.2rem;
                     color:white;
-                    margin: 0 1rem;
+                    margin:1rem;
                     flex:3;
                     outline:none;
                     background:none;
-                    height: 80%;
+                    height: 50%;
                     border:none;
                     border-bottom: 1px solid white;
                     padding: 0.5rem;
@@ -168,6 +211,7 @@
                     }
                 }
                 button{
+                    margin-top: 1rem;
                     @include btn;
                 }
             }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 const Home = () => {
-  const typerWords = ['typers', 'veterans', 'journalists'];
+  const typerWords = ['classic logophiles', 'collectors', 'veteran typists'];
   const [userEmail, setUserEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -76,8 +76,9 @@ const Home = () => {
       <section className='splash'>
         <h1 className='splash__title'> Typewriter Oasis</h1>
         <h3 className='splash__title-sub'>
-          For <span className='splash__dynamic'></span>
+          <span>For</span> <span className='splash__dynamic'></span>
         </h3>
+        <div className='splash__overlay'></div>
       </section>
       <section className='collection'>
         <h2 className='collection__title'>Our Collection</h2>
