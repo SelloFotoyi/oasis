@@ -3,59 +3,21 @@ import {Link, useLocation} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 
-const Nav = ({isMobileMenuOpen, setIsMobileMenuOpen, totalItems}) => {
+const Nav = ({totalItems}) => {
   const location = useLocation();
 
   return (
     <>
-      <div className='mobile-nav'>
-        <Link
-          to='/'
-          className='mobile-nav__logo'
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          TO
-        </Link>
-        <Link to='/cart' style={{textDecoration: 'none'}}>
-          <FontAwesomeIcon icon={faShoppingCart} className='mobile-nav__cart' />
-          <span className='mobile-nav__cart__items'>{totalItems}</span>
-        </Link>
-        <div
-          className='mobile-nav__btn'
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          <span
-            className={`mobile-nav__btn__burger ${
-              isMobileMenuOpen ? 'open' : ''
-            }`}
-          ></span>
-        </div>
-      </div>
-      <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
+      <nav className='nav'>
         <Link to='/' className='nav__item logo'>
           TO
         </Link>
-        <Link to='/cart' onClick={() => setIsMobileMenuOpen(false)}>
+        <Link to='/cart'>
           <FontAwesomeIcon icon={faShoppingCart} className='nav__item__cart' />
           <span className='nav__item__cart__items'>{totalItems}</span>
         </Link>
-        <Link
-          to='/shop'
-          className={`nav__item ${
-            location.pathname === '/shop' ? ' active' : ''
-          }}`}
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
+        <Link to='/shop' className='nav__item'>
           Shop
-        </Link>
-        <Link
-          to='/gallery'
-          className={`nav__item ${
-            location.pathname === '/gallery' ? 'active' : ''
-          }}`}
-          onClick={() => setIsMobileMenuOpen(false)}
-        >
-          Gallery
         </Link>
       </nav>
     </>

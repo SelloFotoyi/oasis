@@ -165,6 +165,7 @@ const Home = () => {
                   onChange={(e) => setUserEmail(e.target.value)}
                   placeholder='user@email.com'
                   className='email-input'
+                  required
                 />
                 <button>Subscribe</button>
               </form>

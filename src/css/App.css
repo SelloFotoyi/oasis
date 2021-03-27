@@ -7,7 +7,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -226,7 +225,7 @@
   color: white;
   font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 0.1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 90%;
   margin: auto;
   text-align: center;
@@ -370,110 +369,21 @@
   text-align: center;
 }
 
-.mobile-nav {
+.nav {
+  overflow: hidden;
   position: fixed;
-  width: 100%;
-  padding: 0 1rem;
   top: 0;
   left: 0;
+  transition: all 0.5s;
   height: 3rem;
+  width: 100vw;
+  padding: 0 1rem;
+  overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 5;
-  background-color: black;
-}
-
-.mobile-nav .mobile-nav__logo {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.25rem;
-  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.mobile-nav .mobile-nav__cart {
-  color: white;
-}
-
-.mobile-nav .mobile-nav__cart__items {
-  color: white;
-  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-  margin-left: 0.1rem;
-  position: absolute;
-  bottom: 0;
-}
-
-.mobile-nav .mobile-nav__btn {
-  z-index: 5;
-  cursor: pointer;
-  width: 2rem;
-  height: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mobile-nav .mobile-nav__btn__burger {
-  z-index: 7;
-  transition: all 0.5s;
-  position: relative;
-  width: 1.5rem;
-  height: 0.1rem;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.mobile-nav .mobile-nav__btn__burger::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -0.5rem;
-  height: 0.1rem;
-  width: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.mobile-nav .mobile-nav__btn__burger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  height: 0.1rem;
-  width: 1.5rem;
-  background: rgba(255, 255, 255, 0.7);
-}
-
-.mobile-nav .mobile-nav__btn__burger.open {
-  transform: rotate(180deg);
-  background: transparent;
-}
-
-.mobile-nav .mobile-nav__btn__burger.open::before {
-  transform: translate(0, 0.5rem) rotate(45deg);
-}
-
-.mobile-nav .mobile-nav__btn__burger.open::after {
-  transform: translate(0, -0.5rem) rotate(-45deg);
-}
-
-.nav {
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.5s;
-  height: 100%;
-  width: 100vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   z-index: 3;
   background: black;
-  transform: translateY(-150vh);
 }
 
 .nav .nav__item {
@@ -482,32 +392,22 @@
   color: white;
   margin: 1.5rem 0;
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   position: relative;
   text-decoration: none;
 }
 
-.nav .nav__item.logo {
-  display: none;
-}
-
 .nav .nav__item__cart {
   color: white;
-  display: none;
 }
 
 .nav .nav__item__cart__items {
-  display: none;
   color: white;
   font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
   margin-left: 0.1rem;
   position: absolute;
-  bottom: 1rem;
-}
-
-.nav.open {
-  transform: translateY(0);
+  bottom: 0;
 }
 
 .nav .nav__item.active {
@@ -1359,128 +1259,6 @@
 
 .tracker__texts__text.inactive {
   opacity: 0.5;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@font-face {
-  font-family: "type font";
-  src: url("../assets/EuropeanTypewriter.ttf") format("truetype");
-}
-
-.home-history .home-history__header span, .home-subscribe .home-subscribe__header span {
-  position: absolute;
-  z-index: 2;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-subscribe .home-subscribe__header span h1 {
-  color: white;
-  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.1rem;
-  font-size: 2rem;
-  width: 90%;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.gallery {
-  width: 95%;
-  margin: 1.5rem auto;
-  height: 100%;
-  display: grid;
-  grid-gap: 5px;
-  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-  grid-auto-rows: 75px;
-  grid-auto-flow: dense;
-  position: relative;
-}
-
-.gallery__title {
-  width: 50%;
-  margin: 5rem auto 1.5rem auto;
-  padding-bottom: 0.2rem;
-  border-bottom: 5px solid black;
-  text-align: center;
-  font-family: "type font", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.gallery__modal {
-  padding-top: 5rem;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.gallery__modal div {
-  position: relative;
-  width: 80%;
-  height: 80%;
-}
-
-.gallery__modal div .icon {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 50px;
-  height: 50px;
-  cursor: pinter;
-  color: white;
-}
-
-.gallery__modal div .icon:hover {
-  color: red;
-}
-
-.gallery__modal div img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.gallery > div > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-.gallery > div > img:hover {
-  transition: all 0.5s;
-  opacity: 0.95;
-}
-
-.long {
-  grid-column: span 2;
-}
-
-.tall {
-  grid-row: span 2;
-}
-
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
 }
 
 * {

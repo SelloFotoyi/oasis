@@ -9,11 +9,8 @@ import Products from './components/Products/Products';
 import ProductInfo from './components/Products/Product/ProductInfo';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
-import Confirmation from './components/Checkout/Confirmation';
-import Gallery from './components/Gallery/Gallery';
 
 function App() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
   const [cart, setCart] = useState({});
@@ -86,58 +83,41 @@ function App() {
 
   return (
     <div className='App'>
-      <Nav
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-        totalItems={cart.total_items}
-      />
+      <Nav totalItems={cart.total_items} />
 
       <Route>
-        <Route exact path='/'>
-          {!isMobileMenuOpen && <Home />}
-        </Route>
+        <Route exact path='/' component={Home} />
         <Route exact path='/shop'>
-          {!isMobileMenuOpen && (
-            <Products
-              products={products}
-              setProduct={setProduct}
-              isLoading={isLoading}
-              addToCart={addToCart}
-            />
-          )}
+          <Products
+            products={products}
+            setProduct={setProduct}
+            isLoading={isLoading}
+            addToCart={addToCart}
+          />
         </Route>
         <Route exact path='/product-info'>
-          {!isMobileMenuOpen && (
-            <ProductInfo
-              product={product}
-              setProduct={setProduct}
-              addToCart={addToCart}
-            />
-          )}
+          <ProductInfo
+            product={product}
+            setProduct={setProduct}
+            addToCart={addToCart}
+          />
         </Route>
         <Route exact path='/cart'>
-          {!isMobileMenuOpen && (
-            <Cart
-              cart={cart}
-              updateCartQty={updateCartQty}
-              removeFromCart={removeFromCart}
-              emptyCart={emptyCart}
-            />
-          )}
+          <Cart
+            cart={cart}
+            updateCartQty={updateCartQty}
+            removeFromCart={removeFromCart}
+            emptyCart={emptyCart}
+          />
         </Route>
         <Route exact path='/checkout'>
-          {!isMobileMenuOpen && (
-            <Checkout
-              cart={cart}
-              order={order}
-              handleCaptureCheckout={handleCaptureCheckout}
-              error={errorMessage}
-              refreshCart={refreshCart}
-            />
-          )}
-        </Route>
-        <Route exact path='/gallery'>
-          {!isMobileMenuOpen && <Gallery />}
+          <Checkout
+            cart={cart}
+            order={order}
+            handleCaptureCheckout={handleCaptureCheckout}
+            error={errorMessage}
+            refreshCart={refreshCart}
+          />
         </Route>
       </Route>
       <Footer />
