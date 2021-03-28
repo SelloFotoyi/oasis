@@ -42,3 +42,9 @@
         color: red;
     }
 }
+
+ @include media-desktop__sm {
+     .nav{
+         padding: 0 2.5rem; 
+     }
+ }

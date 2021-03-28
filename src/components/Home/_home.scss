@@ -125,13 +125,6 @@
 .home-history{
     width: 100%;
     position: relative;
-    #{&}__source{ 
-        position: absolute;
-        margin-top: 15rem;
-        right: 4rem; 
-        bottom: 1rem;
-        font-size: 1rem;
-    }
     #{&}__header{
         width: 100%;
         height:50vh;
@@ -165,6 +158,13 @@
             letter-spacing: 0.1rem;
             line-height: 1.25;
             text-align: left;
+        }
+        &__source{ 
+            position: absolute;
+            margin-top: 15rem;
+            right: 4rem; 
+            bottom: 1rem;
+            font-size: 1rem;
         }
     }
 }
@@ -270,9 +270,29 @@
              p{
                  margin: 2rem 0;
              }
+             &__source{ 
+                 margin-top: 2.5rem; 
+             }
          }
      }
      .home-subscribe{
          height: 40vh;
      }
  }
+
+@include media-desktop__sm {
+     .home-history{
+        #{&}__header{
+            height:60vh;
+        }
+        #{&}__info{
+            width: 65%; 
+        }
+     }
+     .home-subscribe{
+         height: 70vh; 
+         #{&}__header{ 
+             padding-top: 3.5rem;
+         }
+     }
+}

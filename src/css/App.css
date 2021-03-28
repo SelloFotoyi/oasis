@@ -216,14 +216,6 @@
   position: relative;
 }
 
-.home-history .home-history__source {
-  position: absolute;
-  margin-top: 15rem;
-  right: 4rem;
-  bottom: 1rem;
-  font-size: 1rem;
-}
-
 .home-history .home-history__header {
   width: 100%;
   height: 50vh;
@@ -259,6 +251,14 @@
   letter-spacing: 0.1rem;
   line-height: 1.25;
   text-align: left;
+}
+
+.home-history .home-history__info__source {
+  position: absolute;
+  margin-top: 15rem;
+  right: 4rem;
+  bottom: 1rem;
+  font-size: 1rem;
 }
 
 .home-subscribe {
@@ -379,8 +379,26 @@
   .home-history .home-history__info p {
     margin: 2rem 0;
   }
+  .home-history .home-history__info__source {
+    margin-top: 2.5rem;
+  }
   .home-subscribe {
     height: 40vh;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-history .home-history__header {
+    height: 60vh;
+  }
+  .home-history .home-history__info {
+    width: 65%;
+  }
+  .home-subscribe {
+    height: 70vh;
+  }
+  .home-subscribe .home-subscribe__header {
+    padding-top: 3.5rem;
   }
 }
 
@@ -463,6 +481,12 @@
   border-bottom: 2px solid white;
   padding-bottom: 0.5rem;
   color: red;
+}
+
+@media screen and (min-width: 1024px) {
+  .nav {
+    padding: 0 2.5rem;
+  }
 }
 
 * {
@@ -840,6 +864,43 @@
   .product-info {
     width: 80%;
     margin: 1rem auto;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .product-info {
+    width: 85%;
+  }
+  .product-info .current {
+    width: 100%;
+    height: 30rem;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 5rem;
+  }
+  .product-info .current__images {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 12.5rem;
+    padding-top: 0;
+    height: 25rem;
+  }
+  .product-info .current__images__main {
+    order: 2;
+    height: 80%;
+    width: 60%;
+  }
+  .product-info .current__images__assets {
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    order: 1;
+    width: 10%;
+    height: 50%;
+    margin-right: 1.5rem;
+  }
+  .product-info .current__images__assets__asset {
+    width: 100%;
   }
 }
 
@@ -1240,6 +1301,15 @@
   color: white;
 }
 
+@media screen and (min-width: 1024px) {
+  .review {
+    position: absolute;
+    right: 1.5rem;
+    top: 2.5rem;
+    width: 35%;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -1341,6 +1411,13 @@
 
 .tracker__texts__text.inactive {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 1024px) {
+  .tracker {
+    width: 50%;
+    margin: 3.5rem 1.5rem 1.5rem 3.5rem;
+  }
 }
 
 * {
@@ -1566,6 +1643,13 @@
   }
   .payment__title {
     font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .address, .payment {
+    width: 55%;
+    margin: 3.5rem 1.5rem 1.5rem 3.5rem;
   }
 }
 

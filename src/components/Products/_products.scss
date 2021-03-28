@@ -171,3 +171,41 @@
          margin: 1rem auto; 
      }
  }
+
+@include media-desktop__sm {
+     .product-info{ 
+         width:85%; 
+         .current{
+            width: 100%; 
+            height: 30rem; 
+            flex-direction: row;
+            align-items: flex-start;
+            padding-top: 5rem;
+            &__images{
+                flex-direction: row;
+                align-items: flex-start;
+                width: 12.5rem; 
+                padding-top: 0;
+                height: 25rem; 
+                &__main{
+                    order: 2;
+                    height: 80%; 
+                    width: 60%;
+                }
+                &__assets{
+                    flex-direction: column;
+                    align-self: center;
+                    align-items: center;
+                    order: 1;
+                    width: 10%; 
+                    height: 50%;
+                    margin-right: 1.5rem;
+                     &__asset{
+                         width: 100%; 
+                     }
+                }
+            }
+         }
+         
+     }
+}

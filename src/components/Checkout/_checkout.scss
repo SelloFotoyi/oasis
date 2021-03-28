@@ -88,3 +88,11 @@
 
 }
 
+@include media-desktop__sm {
+    .review{
+        position: absolute;
+        right: 1.5rem; 
+        top: 2.5rem; 
+        width: 35%;
+    }
+}

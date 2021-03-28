@@ -155,10 +155,10 @@ const Home = () => {
             layout, developed for typewriters, remains the standard for computer
             keyboards.
           </p>
+          <span className='home-history__info__source'>
+            <i>Source: Wikipedia</i>
+          </span>
         </div>
-        <span className='home-history__source'>
-          <i>Source: Wikipedia</i>
-        </span>
       </section>
       <section className='home-subscribe'>
         <div className='home-subscribe__header'>
