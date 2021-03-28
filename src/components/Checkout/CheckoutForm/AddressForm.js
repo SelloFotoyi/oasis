@@ -59,7 +59,6 @@ const AddressForm = ({checkoutToken, next}) => {
   return (
     <div className='address'>
       <h3 className='address__title'>Shipping details</h3>
-      {/* {shippingCountry ? ( */}
       <FormProvider {...methods}>
         <form
           onSubmit={methods.handleSubmit((data) =>
@@ -189,9 +188,6 @@ const AddressForm = ({checkoutToken, next}) => {
           </div>
         </form>
       </FormProvider>
-      {/* ) : (
-        <LoadGif />
-      )} */}
     </div>
   );
 };

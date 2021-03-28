@@ -39,9 +39,7 @@ $primary-color: black;
 }
 
 @mixin bg-gradient{
-background-color: #CDDCDC;
- background-image: radial-gradient(at 50% 100%, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), linear-gradient(to bottom, rgba(255,255,255,0.25) 0%, rgba(0,0,0,0.25) 100%);
- background-blend-mode: screen, overlay;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 
 @mixin btn{
@@ -85,4 +83,46 @@ background-color: #CDDCDC;
     width: 90%;
     margin: 0 auto;
     text-align: center;
+}
+
+$tablet: 768px;
+$desktop__sm: 1024px;
+$desktop__m: 1280px;
+$desktop__l: 1440px;
+
+@mixin media-mobile-m {
+  @media screen and (min-width: $mobile-m) {
+    @content;
+  }
+}
+@mixin media-mobile-l {
+  @media screen and (min-width: $mobile-l) {
+    @content;
+  }
+}
+@mixin media-mobile-xl {
+  @media screen and (min-width: 550px) and (max-width: $mobile-xl) {
+    @content;
+  }
+}
+@mixin media-tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin media-desktop__sm {
+  @media screen and (min-width: $desktop__sm) {
+    @content;
+  }
+}
+@mixin media-desktop__m {
+  @media screen and (min-width: $desktop__m) {
+    @content;
+  }
+}
+
+@mixin media-desktop__l {
+  @media screen and (min-width: $desktop__l) {
+    @content;
+  }
 }

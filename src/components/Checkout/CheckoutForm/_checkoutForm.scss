@@ -11,11 +11,11 @@
         width:100%;
         text-align: center;
         padding:1rem;
-        background: linear-gradient( to right, black, lightgrey);
         @include type-font;
         letter-spacing: 0.2rem;
-        font-size: 1.25rem;
-        color:white;
+        font-size: 1.5rem;
+        color:black;
+        margin-top: 2rem; 
     }
     &__btns{
         width:100%;
@@ -34,10 +34,8 @@
         display:flex; 
         flex-direction:column;
         padding:0.2rem;
-        border: 1px solid lightgrey;
-        border-top: none;
         input{
-            margin:0.5rem 0 1rem 0;
+            margin:2.5rem 0 1rem 0;
             height:2rem;
             outline:none;
             border: none;
@@ -66,18 +64,16 @@
 .payment{
     width: 95%; 
     margin: 1.5rem auto;
-    border: 1px solid lightgrey;
     border-top: none;
      @include type-font;
     &__title{
         width: 100%; 
         text-align: center;
         letter-spacing: 0.2rem; 
-        font-size: 1.5rem;
         margin-bottom: 1.5rem;
-        padding:0.75rem;
-        color:white;
-        background: linear-gradient( to right, black, lightgrey);
+        font-size: 1.5rem;
+        color:black;
+        margin-top: 2rem; 
     }
     &__options{
         width: 95%;
@@ -123,5 +119,22 @@
             margin:0 0.5rem;
         }
     }
-
 }
+
+ @include media-tablet {
+     .address{
+         width: 75%;
+         &__title{
+             font-size: 2rem;
+         }
+         &__btns{
+            border: px solid red;
+         }
+     }
+     .payment{
+         width: 75%;
+         &__title{
+             font-size: 2rem;
+         }
+     }
+ }

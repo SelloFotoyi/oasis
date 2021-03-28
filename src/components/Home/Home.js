@@ -68,6 +68,7 @@ const Home = () => {
   };
 
   useEffect(() => {
+    document.title = 'Home | Typescript Oasis';
     init();
   }, []);
 
@@ -120,30 +121,44 @@ const Home = () => {
         </div>
         <div className='home-history__info'>
           <p>
-            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
-            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
-            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
-            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
-            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
-            pariatur eiusmod aliquip et ad.
+            A typewriter is a mechanical or electromechanical machine for typing
+            characters similar to those produced by a printer's movable type.
+            Typically, a typewriter has an array of keys, and each one causes a
+            different single character to be produced on the paper, by means of
+            a ribbon with dried ink struck against the paper by a type element
+            similar to the sorts used in movable type letterpress printing.
           </p>
           <p>
-            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
-            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
-            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
-            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
-            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
-            pariatur eiusmod aliquip et ad.
+            On some typewriters, a separate type element (called a typebar)
+            corresponds to each key; others use a single type element (such as a
+            typeball or disc) with a different portion of it used for each
+            character. At the end of the nineteenth century, the term typewriter
+            was also applied to a person who used a typing machine.
           </p>
           <p>
-            Ipsum ullamco irure aliqua dolore. Velit labore ullamco non commodo
-            sunt. Dolor elit velit deserunt non ad magna labore aliquip magna
-            nulla eiusmod. Magna irure amet dolor veniam aute esse et ullamco.
-            Ex et qui veniam adipisicing aute labore fugiat quis laborum amet
-            sunt ex sunt. Qui elit laboris ipsum amet proident nisi exercitation
-            pariatur eiusmod aliquip et ad.
+            The first commercial typewriters were introduced in 1874, but did
+            not become common in offices until after the mid-1880s. The
+            typewriter quickly became an indispensable tool for practically all
+            writing other than personal handwritten correspondence. It was
+            widely used by professional writers, in offices, business
+            correspondence in private homes, and by students preparing term
+            papers.
+          </p>
+          <p>
+            Typewriters were a standard fixture in most offices up to the 1980s.
+            Thereafter, they began to be largely supplanted by computers.
+            Nevertheless, typewriters remain common in some parts of the world,
+            are required for a few specific applications, and are popular in
+            certain subcultures. In many Indian cities and towns, typewriters
+            are still used, especially in roadside and legal offices due to a
+            lack of continuous, reliable electricity. The QWERTY keyboard
+            layout, developed for typewriters, remains the standard for computer
+            keyboards.
           </p>
         </div>
+        <span className='home-history__source'>
+          <i>Source: Wikipedia</i>
+        </span>
       </section>
       <section className='home-subscribe'>
         <div className='home-subscribe__header'>
