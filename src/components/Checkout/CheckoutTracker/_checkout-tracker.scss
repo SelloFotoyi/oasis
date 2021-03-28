@@ -1,7 +1,7 @@
 @import '../../../sass/config';
 
 .tracker{
-    @include roboto;
+    @include type-font;
     width: 85%;
     margin: 4rem auto 1rem auto;
     height:10rem;
@@ -60,7 +60,7 @@
 }
 
 @include media-desktop__sm {
-    .tracker{
+    .tracker.alternate{
         width: 50%; 
         margin: 3.5rem 1.5rem 1.5rem 3.5rem;
     }

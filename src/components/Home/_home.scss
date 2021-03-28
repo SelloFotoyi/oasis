@@ -21,7 +21,7 @@
         letter-spacing: 0.5rem;
         color:white;
         font-weight: normal;
-        animation: splash-title 1s ease-in-out;
+        animation: splash-title 1s 2s ease-in-out;
     }
     #{&}__title{
         font-size: 3rem;
@@ -65,10 +65,10 @@
 }
 @keyframes splash-title{ 
     from{
-        transform: scale(0);
+        opacity: 0;
     }
     to{
-        transform: scale(1);
+        opacity: 1;
     }
 }
 
@@ -287,6 +287,9 @@
         }
         #{&}__info{
             width: 65%; 
+            p{
+                font-size: 1.25rem;
+            }
         }
      }
      .home-subscribe{
@@ -295,4 +298,25 @@
              padding-top: 3.5rem;
          }
      }
+}
+
+@include media-desktop__m {
+    .splash{
+        #{&}__title{
+            width: 30%;
+        }
+    }
+    .collection{
+        padding: 2rem;
+        #{&}__grid{
+             grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+             grid-auto-rows: 17.5rem;
+        }
+    }
+    .home-subscribe{
+         height: 80vh; 
+         #{&}__header{ 
+             padding-top: 10.5rem;
+         }
+    }
 }

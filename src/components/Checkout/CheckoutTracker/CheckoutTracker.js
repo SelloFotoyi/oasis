@@ -4,7 +4,7 @@ import {faCheck} from '@fortawesome/free-solid-svg-icons';
 
 const CheckoutTracker = ({checkoutStep, isFinished}) => {
   return (
-    <div className='tracker'>
+    <div className={`tracker ${checkoutStep === 1 ? 'alternate' : ''}`}>
       <h2 className='tracker__title'>Checkout</h2>
       <div className='tracker__steps'>
         <div

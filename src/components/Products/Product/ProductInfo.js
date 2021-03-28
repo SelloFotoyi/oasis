@@ -9,6 +9,7 @@ const ProductInfo = ({product, setProduct, addToCart}) => {
   useEffect(() => {
     document.querySelector('#product-description').innerHTML =
       product.description;
+    document.title = `${product.name} | Typescript Oasis`;
   }, []);
 
   return (
