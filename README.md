@@ -14,6 +14,6 @@ Typewriter Oasis is a mock typewriters e-commerce web application created with r
  - Editing cart
 	- clearing cart
 	- removing a single item from cart 
-	- altering an item's quantity)
+	- altering an item's quantity
  - Checkout procedure (only stripe checkout via card enabled, other methods are included for visual illustration)
  
