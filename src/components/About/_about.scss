@@ -1,0 +1,43 @@
+@import '../../sass/config';
+
+.about{ 
+    @include type-font;
+    width: 90%; 
+    margin: 5rem auto; 
+    height: 60vh; 
+    &__title{
+        width: 100%; 
+        text-align: center; 
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.2rem;
+        
+        span{ 
+            font-size: 0.9rem; 
+            font-weight: normal;
+        }
+    }
+    #{&}__description{
+        p{
+            font-size: 1.25rem;
+            padding: 0.5rem;
+            a{
+                color: black; 
+                cursor: pointer;
+            }
+        }
+    }
+    #{&}__features{ 
+        &__title{
+            margin: 1rem 0 0.25rem 0;
+        }
+        ul{
+            padding: 1rem; 
+        }
+    }
+}
+
+@include media-desktop__m {
+    .about{ 
+        width: 50%;
+    }
+}

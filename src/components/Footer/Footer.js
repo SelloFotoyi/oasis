@@ -16,20 +16,42 @@ const Footer = () => {
         </Link>
         <div className='footer-container__sub'>
           <div className='footer-container__sub__links'>
-            <a href='' className='footer-container__sub__links__link'>
+            <a
+              href='https://typewriterdatabase.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='footer-container__sub__links__link'
+            >
               Resource
             </a>
             <Link to='/about' className='footer-container__sub__links__link'>
               About
             </Link>
-            <a href='' className='footer-container__sub__links__link'>
+            <a
+              href='https://www.linkedin.com/in/sello-fotoyi-79132672/'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='footer-container__sub__links__link'
+            >
               Author
             </a>
           </div>
           <div className='footer-container__sub__socials'>
-            <FontAwesomeIcon icon={faTwitter} className='icon' />
-            <FontAwesomeIcon icon={faGithub} className='icon' />
-            <FontAwesomeIcon icon={faLinkedinIn} className='icon' />
+            <a
+              href='https://github.com/SelloFotoyi'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FontAwesomeIcon icon={faGithub} className='icon' />
+            </a>
+
+            <a
+              href='https://www.linkedin.com/in/sello-fotoyi-79132672/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FontAwesomeIcon icon={faLinkedinIn} className='icon' />
+            </a>
           </div>
         </div>
       </section>

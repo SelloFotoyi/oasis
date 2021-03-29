@@ -6,6 +6,7 @@ import PaymentForm from './CheckoutForm/PaymentForm';
 import CheckoutTracker from './CheckoutTracker/CheckoutTracker';
 import Confirmation from './Confirmation';
 import Review from './Review';
+import ScrollToTop from '../../components/ScrollToTop';
 
 const Checkout = ({cart, order, handleCaptureCheckout, error, refreshCart}) => {
   const step = ['Address', 'Payment'];
@@ -60,6 +61,7 @@ const Checkout = ({cart, order, handleCaptureCheckout, error, refreshCart}) => {
 
   return (
     <div className='checkout'>
+      <ScrollToTop />
       <CheckoutTracker checkoutStep={checkoutStep} isFinished={isFinished} />
       {checkoutToken && checkoutStep === 1 && (
         <Review

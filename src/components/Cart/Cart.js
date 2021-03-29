@@ -8,14 +8,9 @@ const Cart = ({cart, updateCartQty, removeFromCart, emptyCart}) => {
   const history = useHistory();
 
   useEffect(() => {
-    document.title = "Cart | Typewriter Oasis"
-  }, [])
+    document.title = 'Cart | Typewriter Oasis';
+  }, []);
 
-  useEffect(() => {
-    if (!cart) {
-      history.push('/');
-    }
-  }, [cart]);
   return (
     <div className='cart'>
       {cart.line_items.length > 0 ? (

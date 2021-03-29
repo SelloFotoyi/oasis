@@ -15,7 +15,7 @@ import {
   faPaypal,
 } from '@fortawesome/free-brands-svg-icons';
 import {faCreditCard} from '@fortawesome/free-solid-svg-icons';
-
+import ScrollToTop from '../../ScrollToTop';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const PaymentForm = ({
@@ -70,6 +70,7 @@ const PaymentForm = ({
   };
   return (
     <div className='payment'>
+      <ScrollToTop />
       <h3 className='payment__title'>Payment Method</h3>
       <div className='payment__options'>
         <div className='payment__options__option'>
