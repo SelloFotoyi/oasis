@@ -8,7 +8,7 @@ Typewriter Oasis is a mock typewriters e-commerce web application created with r
  and [Stripe](https://stripe.com/).
 
 ### `Features`
- The web app implements basis logic of an e-commerce store, such as:
+ The web app implements basic logic of an e-commerce store, such as:
  - Adding an item to cart
  - Viewing more details of a selected item
  - Editing cart
